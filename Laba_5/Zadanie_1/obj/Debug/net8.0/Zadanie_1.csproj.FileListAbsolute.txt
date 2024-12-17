@@ -1,0 +1,14 @@
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\bin\Debug\net8.0\Zadanie_1.exe
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\bin\Debug\net8.0\Zadanie_1.deps.json
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\bin\Debug\net8.0\Zadanie_1.runtimeconfig.json
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\bin\Debug\net8.0\Zadanie_1.dll
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\bin\Debug\net8.0\Zadanie_1.pdb
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\obj\Debug\net8.0\Zadanie_1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\obj\Debug\net8.0\Zadanie_1.AssemblyInfoInputs.cache
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\obj\Debug\net8.0\Zadanie_1.AssemblyInfo.cs
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\obj\Debug\net8.0\Zadanie_1.csproj.CoreCompileInputs.cache
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\obj\Debug\net8.0\Zadanie_1.dll
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\obj\Debug\net8.0\refint\Zadanie_1.dll
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\obj\Debug\net8.0\Zadanie_1.pdb
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\obj\Debug\net8.0\Zadanie_1.genruntimeconfig.cache
+D:\Вадик\Обучение\ВШЭ_Пермь\Програмирование\Лаба_5\Код\Laba_5\Zadanie_1\obj\Debug\net8.0\ref\Zadanie_1.dll
