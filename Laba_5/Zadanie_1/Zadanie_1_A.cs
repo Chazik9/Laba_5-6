@@ -40,6 +40,7 @@ namespace Zadanie_1
             }
             Console.WriteLine("Конец работы программы");
         }
+
         #region Вспомогательные фунции
         static void FillTextException(string message)//Красный шрифт-для ошибок
         {
@@ -47,20 +48,24 @@ namespace Zadanie_1
             Console.WriteLine(message);
             Console.ForegroundColor = ConsoleColor.White;
         }
+
         static void FillTextAnswer(string message)//Зелёный шрифт-для успешно сделанных операций
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(message);
             Console.ForegroundColor = ConsoleColor.White;
         }
+
         static bool CheckOfEmpty2DArray(int[,] array)//Проверка на пустой массив
         {
             return array == null || array.GetLength(0) == 0 || array.GetLength(1) == 0;//Тестируем
         }
+
         static bool CheckOfEmptyRvanArray(int[][] array)//Проверка на пустой массив
         {
             return array == null || array.Length == 0;//Тестируем
         }
+
         static int[,] CreateDefault2DArray()//Данные по умолчанию
         {
             return new int[,]
@@ -70,6 +75,7 @@ namespace Zadanie_1
                 { 7, 8, 9 }
             };
         }
+
         static int[][] CreateDefaultRvanArray()//Данные по умолчанию
         {
             return
@@ -79,10 +85,12 @@ namespace Zadanie_1
                     [6, 7, 8, 9]
             ];
         }
+
         static string CreateDefaultString()//Данные по умолчанию
         {
             return "Привет, проверяющий, какой кофе пьёшь?";
         }
+
         static void ViewList(int[] list)//Функция Показа одномерного списка
         {
             foreach (int elementOfArray in list)//Перебор элементов списка
@@ -91,6 +99,7 @@ namespace Zadanie_1
             }
             Console.WriteLine();//Для вывода следующего текста с новой строки
         }
+
         static void ViewList(string[] list)//Функция Показа одномерного списка
         {
             int i = 1;
@@ -99,6 +108,7 @@ namespace Zadanie_1
                 Console.WriteLine($"{i++}){elementOfArray}");
             }
         }
+
         static int CheckIntBigger0(string text)//функция Проверки числа на целое и больше 0
         {
             int intNumber;//Входные данные(число больше 0)
@@ -160,6 +170,7 @@ namespace Zadanie_1
 
             return intNumber;//Возвращаем целое число
         }
+
         static int[] ListКRandom(int lengthList, int minValueOfElement = -1000, int maxValueOfElement = 1000)//Функция Создания списка(строки) случайно
         {
             int[] list = new int[lengthList];
@@ -170,6 +181,7 @@ namespace Zadanie_1
             }
             return list;//Возвращаем этот список
         }
+
         #endregion
         #region Двумерные
         static int[] ListClava2D(int lengthList)//Функция Создания массива вручную
@@ -187,6 +199,7 @@ namespace Zadanie_1
             ViewList(list);//Выводим массив
             return list;//возвращаем массив для дальнейшей работы
         }
+
         static void View2DArray(int[,] array2D)//Функция вывода двумерного массива
         {
             for (int i = 0; i < array2D.GetLength(0); i++)
@@ -213,6 +226,7 @@ namespace Zadanie_1
             }
             return array2D;
         }
+        
         static int[,] Create2DAraayClava(int strings, int columns)//Создание двумерного массива вручную
         {
             int[,] array2D = new int[strings, columns];
@@ -226,6 +240,7 @@ namespace Zadanie_1
             }
             return array2D;
         }
+        
         static int[,] DeleteStrings2D(int[,] array2D, int k1, int k2)//Удаляем элементы массива
         {
             int strings = array2D.GetLength(0);// Количество строк и столбцов в исходном массиве
@@ -250,6 +265,7 @@ namespace Zadanie_1
             FillTextAnswer($"Строки с {k1 + 1} по {k2 + 1} успешно удалены.");
             return newArray2D;
         }
+        
         static int[,] AddString2DArray(int[,] array2D, int stringIndex, int[] newString)//Добавляем строку в двумерный массив
         {
             if (stringIndex < 0 || stringIndex > array2D.GetLength(0))// Проверяем, что индекс строки корректен
@@ -288,6 +304,7 @@ namespace Zadanie_1
             }
             return newArray;
         }
+
         #endregion
         #region Рваные
         static int[] ListClavaRvan(int numberOfString)//Функция Создания рваного массива вручную
@@ -314,6 +331,7 @@ namespace Zadanie_1
             ViewList(list);//Выводим массив
             return list;//возвращаем массив для дальнейшей работы
         }
+
         static void ViewRvanArray(int[][] arrayRvan)//Функция вывода рваного массива
         {
             for (int i = 0; i < arrayRvan.GetLength(0); i++)
@@ -334,6 +352,7 @@ namespace Zadanie_1
             }
             return arrayRvan;
         }
+        
         static int[][] CreateRvanAraayClava(int strings)//Создаём рваный массив вручную
         {
             int[][] arrayRvan = new int[strings][];
@@ -345,6 +364,7 @@ namespace Zadanie_1
             }
             return arrayRvan;
         }
+        
         static int[][] DeleteStringsRvan(int[][] arrayRvan, int k1, int k2)
         {
             int strings = arrayRvan.GetLength(0);// Количество строк в исходном массиве
@@ -363,6 +383,7 @@ namespace Zadanie_1
             FillTextAnswer($"Строки с {k1 + 1} по {k2 + 1} успешно удалены");
             return newArrayRvan;
         }
+        
         static int[][] AddStringRvanArray(int[][] arrayRvan, int stringIndex, int[] newString)
         {
             if (stringIndex < 0 || stringIndex > arrayRvan.GetLength(0))// Проверяем, что индекс строки корректен
@@ -402,11 +423,13 @@ namespace Zadanie_1
             string reversedString = new string(str.Reverse().ToArray());
             return reversedString;
         }
+
         static string CapitalSizeFirstLetter(string word)//Преобразование первых элементов предложения в заглавные
         {
 
             return char.ToUpper(word[0]) + word.Substring(1);
         }
+
         static bool CheckCorectLine(string curentString)//Проверка корректности строки
         {
             string psternOsniv = @"[^а-яА-Яa-zA-Z0-9\s.,!?;:]";
@@ -459,6 +482,7 @@ namespace Zadanie_1
            
             return true;
         }
+
         static void AddNewDefaultStrings(ref string[] ArrayOfDefaultStrings)//Добавление нового элемента в список по умолчанию
         {
             string curentString;
@@ -556,7 +580,6 @@ namespace Zadanie_1
                 resultString.Append(stringItog);
             }
             return resultString.ToString();//Собираем все предложения
-            
         }
 
         #endregion
@@ -601,6 +624,7 @@ namespace Zadanie_1
             }
             return true;
         }
+        
         static bool NextActionStringMenu(ref string currentString, ref string[] ArrayOfDefaultStrings)
         {
             Console.WriteLine("-----------Работа с Строками-----------\n0-Ввести строку\n1-Преобразовать введённую строку\n2-Преобразовать строку из массива по умолчанию\n3-Показать строки по умолчанию" +
@@ -657,6 +681,7 @@ namespace Zadanie_1
             }
             return true;
         }
+        
         static bool NextAction2DArrayMenu(ref int[,] array2D)//Функция через которую происходит навигация в текстовом меню
         {
             Console.WriteLine("-----------Работа с двумерными массивами-----------\n0-Показать двумерный массив\n1-Создать массив вручную\n2-Создать массив рандомно" +
@@ -845,6 +870,7 @@ namespace Zadanie_1
             }
             return true;
         }
+        
         static bool NextActionRvanArrayMenu(ref int[][] arrayRvan)//Функция через которую происходит навигация в текстовом меню
         {
             Console.WriteLine("-----------Работа с рваными массивами-----------\n0-Показать рваный массив\n1-Создать массив вручную\n2-Создать массив рандомно" +
