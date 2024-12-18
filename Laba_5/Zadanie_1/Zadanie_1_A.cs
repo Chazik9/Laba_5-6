@@ -1,4 +1,4 @@
-﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -15,7 +15,7 @@ namespace Zadanie_1
     internal class Zadanie_1_A
     {
         static void Main(string[] args)
-        {//Инициализация всех данный по умолчанию их вывод
+        {//Инициализация всех данный по умолчанию и их вывод
             int[][] rvanArray = CreateDefaultRvanArray();
             int[,] array2D = CreateDefault2DArray();
             string[] ArrayOfDefaultStrings = {"Привет, проверяющий, какой кофе пьёшь?", "Я. Очень. Устал. Писать. Код!", "Время 4 часа ночи! Сори, что скину так поздно!"};
@@ -53,13 +53,13 @@ namespace Zadanie_1
             Console.WriteLine(message);
             Console.ForegroundColor = ConsoleColor.White;
         }
-        static bool CheckOfEmpty2DArray(int[,] array)//Прооверка на пустой маассив
+        static bool CheckOfEmpty2DArray(int[,] array)//Проверка на пустой массив
         {
-            return array == null || array.GetLength(0) == 0 || array.GetLength(1) == 0;
+            return array == null || array.GetLength(0) == 0 || array.GetLength(1) == 0;//Тестируем
         }
-        static bool CheckOfEmptyRvanArray(int[][] array)//Прооверка на пустой маассив
+        static bool CheckOfEmptyRvanArray(int[][] array)//Проверка на пустой массив
         {
-            return array == null || array.Length == 0;
+            return array == null || array.Length == 0;//Тестируем
         }
         static int[,] CreateDefault2DArray()//Данные по умолчанию
         {
@@ -90,7 +90,7 @@ namespace Zadanie_1
                 Console.Write(elementOfArray + " ");
             }
             Console.WriteLine();//Для вывода следующего текста с новой строки
-        }//Блок-схема Есть+
+        }
         static void ViewList(string[] list)//Функция Показа одномерного списка
         {
             int i = 1;
@@ -98,7 +98,7 @@ namespace Zadanie_1
             {
                 Console.WriteLine($"{i++}){elementOfArray}");
             }
-        }//Блок-схема Есть+
+        }
         static int CheckIntBigger0(string text)//функция Проверки числа на целое и больше 0
         {
             int intNumber;//Входные данные(число больше 0)
@@ -172,7 +172,7 @@ namespace Zadanie_1
         }
         #endregion
         #region Двумерные
-        static int[] ListClava2D(int lengthList)//Функция Создания списка вручную
+        static int[] ListClava2D(int lengthList)//Функция Создания массива вручную
         {
             int[] list = new int[lengthList];//создаём массив 
             Console.WriteLine("Учтите что все элементы массива целые");
@@ -187,7 +187,7 @@ namespace Zadanie_1
             ViewList(list);//Выводим массив
             return list;//возвращаем массив для дальнейшей работы
         }
-        static void View2DArray(int[,] array2D)
+        static void View2DArray(int[,] array2D)//Функция вывода двумерного массива
         {
             for (int i = 0; i < array2D.GetLength(0); i++)
             {
@@ -199,7 +199,7 @@ namespace Zadanie_1
             }
         }
 
-        static int[,] Create2DAraayRandom(int strings, int columns, int minValueOfElement, int maxValueOfElement)
+        static int[,] Create2DAraayRandom(int strings, int columns, int minValueOfElement, int maxValueOfElement)//Создание двумерного массива случайно
         {
             Random random = new Random();
             int[,] array2D = new int[strings, columns];
@@ -213,7 +213,7 @@ namespace Zadanie_1
             }
             return array2D;
         }
-        static int[,] Create2DAraayClava(int strings, int columns)
+        static int[,] Create2DAraayClava(int strings, int columns)//Создание двумерного массива вручную
         {
             int[,] array2D = new int[strings, columns];
             int i, j;
@@ -226,14 +226,12 @@ namespace Zadanie_1
             }
             return array2D;
         }
-        static int[,] DeleteStrings2D(int[,] array2D, int k1, int k2)
+        static int[,] DeleteStrings2D(int[,] array2D, int k1, int k2)//Удаляем элементы массива
         {
-            // Количество строк и столбцов в исходном массиве
-            int strings = array2D.GetLength(0);
+            int strings = array2D.GetLength(0);// Количество строк и столбцов в исходном массиве
             int columns = array2D.GetLength(1);
 
-            // Количество строк в новом массиве
-            int newStrings = strings - (k2 - k1 + 1);
+            int newStrings = strings - (k2 - k1 + 1);// Количество строк в новом массиве
             int[,] newArray2D = new int[newStrings, columns];
 
             int newString = 0; // Индекс для новой строки
@@ -252,21 +250,17 @@ namespace Zadanie_1
             FillTextAnswer($"Строки с {k1 + 1} по {k2 + 1} успешно удалены.");
             return newArray2D;
         }
-        static int[,] AddString2DArray(int[,] array2D, int stringIndex, int[] newString)
+        static int[,] AddString2DArray(int[,] array2D, int stringIndex, int[] newString)//Добавляем строку в двумерный массив
         {
-            // Проверяем, что индекс строки корректен
-            if (stringIndex < 0 || stringIndex > array2D.GetLength(0))
+            if (stringIndex < 0 || stringIndex > array2D.GetLength(0))// Проверяем, что индекс строки корректен
             {
                 FillTextException("Ошибка: Указан некорректный номер строки.");
                 return array2D;
             }
-            // Создаём новый массив с количеством строк на 1 больше
-            int strings = array2D.GetLength(0);
+            int strings = array2D.GetLength(0);// Создаём новый массив с количеством строк на 1 больше
             int columns = array2D.GetLength(1);
-            int[,] newArray = new int[strings + 1, columns];
-
-            // Копируем строки в новый массив с добавлением новой строки
-            int newStringIndex = 0;
+            int[,] newArray = new int[strings + 1, columns];// Копируем строки в новый массив с добавлением новой строки
+            int newStringIndex = 0;            
             for (int i = 0; i <= strings; i++)
             {
                 if (i == stringIndex) // Вставляем новую строку
@@ -288,18 +282,15 @@ namespace Zadanie_1
                         {
                             newArray[newStringIndex, j] = array2D[i - 1, j];
                         }
-                        //newArray[newStringIndex, j] = array2D[i < stringIndex ? i : i - 1, j];
                     }
                 }
                 newStringIndex++;
             }
-
-            //FillTextAnswer($"Строка успешно добавлена на позицию {stringIndex + 1}.");
             return newArray;
         }
         #endregion
         #region Рваные
-        static int[] ListClavaRvan(int numberOfString)//Функция Создания списка вручную
+        static int[] ListClavaRvan(int numberOfString)//Функция Создания рваного массива вручную
         {
             bool corectColumns;
             int lengthList;
@@ -320,11 +311,10 @@ namespace Zadanie_1
             {
                 list[i] = CheckIntAny($"Введите {i + 1} элемент строки");//заполняем массив элементами, с клавиатуры 
             }
-            //FillTextAnswer($"Успешно создана {numberOfString + 1}-ая строка матрицы:");
             ViewList(list);//Выводим массив
             return list;//возвращаем массив для дальнейшей работы
         }
-        static void ViewRvanArray(int[][] arrayRvan)
+        static void ViewRvanArray(int[][] arrayRvan)//Функция вывода рваного массива
         {
             for (int i = 0; i < arrayRvan.GetLength(0); i++)
             {
@@ -332,7 +322,7 @@ namespace Zadanie_1
             }
         }
 
-        static int[][] CreateRvanAraayRandom(int strings, int maxColumns, int minValueOfElement, int maxValueOfElement)
+        static int[][] CreateRvanAraayRandom(int strings, int maxColumns, int minValueOfElement, int maxValueOfElement)//Создаём рваный массив случайно
         {
             Random random = new Random();
             int[][] arrayRvan = new int[strings][];
@@ -344,7 +334,7 @@ namespace Zadanie_1
             }
             return arrayRvan;
         }
-        static int[][] CreateRvanAraayClava(int strings)
+        static int[][] CreateRvanAraayClava(int strings)//Создаём рваный массив вручную
         {
             int[][] arrayRvan = new int[strings][];
             int i;
@@ -357,12 +347,8 @@ namespace Zadanie_1
         }
         static int[][] DeleteStringsRvan(int[][] arrayRvan, int k1, int k2)
         {
-            // Количество строк и столбцов в исходном массиве
-            int strings = arrayRvan.GetLength(0);
-            //int columns = arrayRvan.GetLength(1);
-
-            // Количество строк в новом массиве
-            int newStrings = strings - (k2 - k1 + 1);
+            int strings = arrayRvan.GetLength(0);// Количество строк в исходном массиве
+            int newStrings = strings - (k2 - k1 + 1);// Количество строк в новом массиве
             int[][] newArrayRvan = new int[newStrings][];
 
             int newString = 0; // Индекс для строк нового
@@ -379,20 +365,15 @@ namespace Zadanie_1
         }
         static int[][] AddStringRvanArray(int[][] arrayRvan, int stringIndex, int[] newString)
         {
-            
-            // Проверяем, что индекс строки корректен
-            if (stringIndex < 0 || stringIndex > arrayRvan.GetLength(0))
+            if (stringIndex < 0 || stringIndex > arrayRvan.GetLength(0))// Проверяем, что индекс строки корректен
             {
                 FillTextException("Ошибка: Указан некорректный номер строки.");
                 return arrayRvan;
             }
-            // Создаём новый массив с количеством строк на 1 больше
             int strings = arrayRvan.GetLength(0);
-            int[][] newArray = new int[strings + 1][];
-
-            // Копируем строки в новый массив с добавлением новой строки
+            int[][] newArray = new int[strings + 1][];// Создаём новый массив с количеством строк на 1 больше
             int newStringIndex = 0;
-            for (int i = 0; i <= strings; i++)
+            for (int i = 0; i <= strings; i++)// Копируем строки в новый массив с добавлением новой строки
             {
                 if (i == stringIndex)// Вставляем новую строку
                 {
@@ -413,7 +394,6 @@ namespace Zadanie_1
             }
             return newArray;
         }
-        //FillTextAnswer($"Строка успешно добавлена на позицию {stringIndex + 1}.");
 
         #endregion
         #region Строки
@@ -421,6 +401,11 @@ namespace Zadanie_1
         {
             string reversedString = new string(str.Reverse().ToArray());
             return reversedString;
+        }
+        static string CapitalSizeFirstLetter(string word)//Преобразование первых элементов предложения в заглавные
+        {
+
+            return char.ToUpper(word[0]) + word.Substring(1);
         }
         static bool CheckCorectLine(string curentString)//Проверка корректности строки
         {
@@ -487,11 +472,12 @@ namespace Zadanie_1
         }
         static string TransformationOfstring(string curentString)//Преобразование строки
         {
-            bool CheckFirstSentences = true;
+            bool ChekFirstWord = true;
             StringBuilder resultString = new StringBuilder();
             string[] sentences = Regex.Split(curentString, @"(?<=[.!?])");//Делим на предложения
             foreach (string sentence in sentences) 
             {
+                bool CheckFirstSentences = true;
                 char lastPunctuation = sentence.LastOrDefault();
                 string editString = sentence.TrimEnd(lastPunctuation).TrimStart();
                 var allStringElements = Regex.Matches(editString, @"\w+|[^\w\s]");//Делим на слова и знаки препинания
@@ -546,8 +532,18 @@ namespace Zadanie_1
                     {
                         if (CheckFirstSentences)
                         {
-                            stringItog = stringItog  + elem;
-                            CheckFirstSentences = false;
+                            if (ChekFirstWord)
+                            {
+                                stringItog = stringItog + CapitalSizeFirstLetter(elem);
+                                CheckFirstSentences = false;
+                                ChekFirstWord = false;
+                                //Изменить регистр
+                            }
+                            else
+                            {
+                                stringItog = stringItog + " " + CapitalSizeFirstLetter(elem);
+                                CheckFirstSentences = false;
+                            }
                         }
                         else
                         {
@@ -835,7 +831,7 @@ namespace Zadanie_1
                         FillTextException("Ошибка: Нельзя добавить больше 30 строк в матрицу");
                         break;
                     }
-                    int[] newStringToRandom2D = ListКRandom(array2D.GetLength(1), -1000, 1000);
+                    int[] newStringToRandom2D = ListКRandom(array2D.GetLength(1));
                     array2D = AddString2DArray(array2D, addStringIndex, newStringToRandom2D);
                     FillTextAnswer("Новая строка успешно добавлена.");
                     break;
