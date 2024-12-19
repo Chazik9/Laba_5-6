@@ -413,6 +413,41 @@ namespace Zadanie_1
                 }
                 newStringIndex++;
             }
+            //for (int i = 0; i <= strings; i++)// Копируем строки в новый массив с добавлением новой строки
+            //{
+            //    if (i == stringIndex)
+            //    {
+            //        newArray[i] = new int[newString.Length];
+            //    }
+            //    else
+            //    {
+            //        newArray[i] = new int[arrayRvan[i].Length];
+            //    }
+                
+            //    for (int j = 0; j < arrayRvan.Length; j++)
+            //    {
+            //        if (i == stringIndex)// Вставляем новую строку
+            //        {
+            //            newArray[newStringIndex][j] = newString[j];
+
+            //        }
+            //        else // Копируем строки из старого массива
+            //        {
+            //            if (i < stringIndex)
+            //            {
+            //                newArray[newStringIndex][j] = arrayRvan[i][j];
+
+            //            }
+            //            else
+            //            {
+            //                newArray[newStringIndex][j] = arrayRvan[i-1][j];
+
+            //            }
+            //        }
+            //    }
+            //    newStringIndex++;
+
+            //}
             return newArray;
         }
 
@@ -432,13 +467,13 @@ namespace Zadanie_1
 
         static bool CheckCorectLine(string curentString)//Проверка корректности строки
         {
-            string psternOsniv = @"[^а-яА-Яa-zA-Z0-9\s.,!?;:]";
+            string psternOsniv = @"[^а-яА-Яa-zA-Z0-9\s.,!?;:ёЁ]";
             string patternPrep = @"[.,!?;:]{2,}";
-            string patternProb = @"[.,!?;: ]{3,}";
+            string patternProb = @"[.,!?;:\s]{3,}";//Изменил условие проверки: с проверки " " на проверку любых пробельных знаков "\s"
             if (Regex.IsMatch(curentString, psternOsniv))//Условие допустимых символов
             {
                 Console.Clear();
-                FillTextException("В строке могут присутствовать только такие знаки препинания как: (.,!?;:)");
+                FillTextException("В строке могут присутствовать только такие знаки препинания как: (.,!?;:), а также цифры и буквы русского и английского");
                 Console.WriteLine("Повторите ввод:");
                 return false;
             }
@@ -539,7 +574,7 @@ namespace Zadanie_1
                 int wordIndex = 0;
                 for (int n = 0; n < wordsAndSymbols.Length; n++)//Собираем предложение обратно с учетом знаков препинания
                 {
-                    if (Regex.IsMatch(wordsAndSymbols[n], @"^\w+$"))
+                    if (Regex.IsMatch(wordsAndSymbols[n], @"^\w+"))
                     {
                         wordsAndSymbols[n] = words[wordIndex];
                         wordIndex++;
@@ -555,10 +590,10 @@ namespace Zadanie_1
                     else
                     {
                         if (CheckFirstSentences)
-                        {
+                        {//добавил проверку на первое слово в каждом предложении и менял регистр этих слов. Также не менял регистр первых слов в предложение, потому что,если слово переворачивалось оно могло быть именем нарицательным. Что некорректно бы влияло.
                             if (ChekFirstWord)
                             {
-                                stringItog = stringItog + CapitalSizeFirstLetter(elem);
+                                stringItog = stringItog + CapitalSizeFirstLetter(elem);//добавил функцию изменения регистра слова
                                 CheckFirstSentences = false;
                                 ChekFirstWord = false;
                                 //Изменить регистр
